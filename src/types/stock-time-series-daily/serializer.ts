@@ -1,5 +1,5 @@
 import { Response } from "./response";
-export const serializer = <R extends Response>(response: R) => ({
+export const serialize = <R extends Response>(response: R) => ({
   meta: serializeMeta(response["Meta Data"]),
   data: serializeData(response["Time Series (Daily)"])
 });

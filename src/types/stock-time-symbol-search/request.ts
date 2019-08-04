@@ -1,4 +1,4 @@
-import { StockDataType, StockSymbol } from "../shared";
+import { StockDataType } from "../shared";
 export interface Request {
   fn: "SYMBOL_SEARCH";
   keywords: string;
