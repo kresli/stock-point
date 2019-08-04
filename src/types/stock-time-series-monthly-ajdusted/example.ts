@@ -1,5 +1,7 @@
-// https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY_ADJUSTED&symbol=MSFT&apikey=demo
-{
+import { Response } from "./response";
+export const exampleUrl =
+  "https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY_ADJUSTED&symbol=MSFT&apikey=demo";
+export const exampleData = {
   "Meta Data": {
     "1. Information": "Weekly Adjusted Prices and Volumes",
     "2. Symbol": "MSFT",
@@ -10142,4 +10144,4 @@
       "7. dividend amount": "0.0000"
     }
   }
-}
+} as Response;

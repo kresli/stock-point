@@ -1,7 +1,11 @@
-// https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=MSFT&interval=5min&apikey=demo
-{
+import { Response } from "./response";
+
+export const exampleUrl =
+  "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=MSFT&interval=5min&apikey=demo";
+export const exampleData = {
   "Meta Data": {
-    "1. Information": "Intraday (5min) open, high, low, close prices and volume",
+    "1. Information":
+      "Intraday (5min) open, high, low, close prices and volume",
     "2. Symbol": "MSFT",
     "3. Last Refreshed": "2019-08-02 16:00:00",
     "4. Interval": "5min",
@@ -710,4 +714,4 @@
       "5. volume": "687809"
     }
   }
-}
+} as Response;

@@ -1,26 +1,21 @@
 import { StockInterval, StockOutputSize, StockSymbol } from "../shared";
 
-export type Response =
-  | {
-      "Meta Data": MetaData;
-      "Time Series (5min)": Series;
-    }
-  | {
-      "Meta Data": MetaData;
-      "Time Series (10min)": Series;
-    }
-  | {
-      "Meta Data": MetaData;
-      "Time Series (15min)": Series;
-    }
-  | {
-      "Meta Data": MetaData;
-      "Time Series (30min)": Series;
-    }
-  | {
-      "Meta Data": MetaData;
-      "Time Series (60min)": Series;
-    };
+export type Response = {
+  "Meta Data": MetaData;
+  "Time Series (5min)"?: Series;
+} & {
+  "Meta Data": MetaData;
+  "Time Series (10min)"?: Series;
+} & {
+  "Meta Data": MetaData;
+  "Time Series (15min)"?: Series;
+} & {
+  "Meta Data": MetaData;
+  "Time Series (30min)"?: Series;
+} & {
+  "Meta Data": MetaData;
+  "Time Series (60min)"?: Series;
+};
 
 interface MetaData {
   "1. Information": string;
@@ -31,7 +26,7 @@ interface MetaData {
   "6. Time Zone": "US/Eastern";
 }
 
-interface Series {
+export interface Series {
   [date: string]: {
     "1. open": string;
     "2. high": string;

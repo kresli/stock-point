@@ -1,6 +1,8 @@
-// https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=BA&apikey=demo
-{
-  "bestMatches": [
+import { Response } from "./response";
+export const exampleUrl =
+  "https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=BA&apikey=demo";
+export const exampleData = {
+  bestMatches: [
     {
       "1. symbol": "BA",
       "2. name": "The Boeing Company",
@@ -101,4 +103,4 @@
       "9. matchScore": "0.1538"
     }
   ]
-}
+} as Response;

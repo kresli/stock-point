@@ -1,27 +1,17 @@
 import { Response } from "./response";
-
-enum Key {
-  Data = "Time Series (Daily)",
-  Meta = "Meta Data"
-}
-
-type Meta = Response[Key.Meta];
-type Data = Response[Key.Data];
-
 export const serialize = <R extends Response>(response: R) => ({
-  meta: serializeMeta(response[Key.Meta]),
-  data: serializeData(response[Key.Data])
+  meta: serializeMeta(response["Meta Data"]),
+  data: serializeData(response["Monthly Adjusted Time Series"])
 });
 
-const serializeMeta = <M extends Meta>(meta: M) => ({
+const serializeMeta = <M extends Response["Meta Data"]>(meta: M) => ({
   information: meta["1. Information"],
   symbol: meta["2. Symbol"],
   updated: meta["3. Last Refreshed"],
-  size: meta["4. Output Size"],
-  zone: meta["5. Time Zone"]
+  zone: meta["4. Time Zone"]
 });
 
-const serializeData = <D extends Data>(data: D) =>
+const serializeData = (data: Response["Monthly Adjusted Time Series"]) =>
   Object.entries(data).reduce(
     (serialized, [date, serie]) => ({
       ...serialized,
@@ -30,7 +20,9 @@ const serializeData = <D extends Data>(data: D) =>
         high: serie["2. high"],
         low: serie["3. low"],
         close: serie["4. close"],
-        volume: serie["5. volume"]
+        adjucted: serie["5. adjusted close"],
+        volume: serie["6. volume"],
+        divident: serie["7. dividend amount"]
       }
     }),
     {}

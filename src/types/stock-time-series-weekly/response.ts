@@ -5,7 +5,7 @@ export interface Response {
     "1. Information": string;
     "2. Symbol": StockSymbol;
     "3. Last Refreshed": string;
-    "6. Time Zone": string;
+    "4. Time Zone": string;
   };
   "Weekly Time Series": {
     [date: string]: {
@@ -13,7 +13,7 @@ export interface Response {
       "2. high": string;
       "3. low": string;
       "4. close": string;
-      "6. volume": string;
+      "5. volume": string;
     };
   };
 }

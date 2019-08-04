@@ -1,7 +1,7 @@
 import { Response } from "./response";
 
 enum Key {
-  Data = "Time Series (Daily)",
+  Data = "Weekly Time Series",
   Meta = "Meta Data"
 }
 
@@ -17,8 +17,7 @@ const serializeMeta = <M extends Meta>(meta: M) => ({
   information: meta["1. Information"],
   symbol: meta["2. Symbol"],
   updated: meta["3. Last Refreshed"],
-  size: meta["4. Output Size"],
-  zone: meta["5. Time Zone"]
+  zone: meta["4. Time Zone"]
 });
 
 const serializeData = <D extends Data>(data: D) =>

@@ -6,7 +6,7 @@ export interface Response {
     "2. Symbol": StockSymbol;
     "3. Last Refreshed": string;
     "4. Output Size": StockOutputSize;
-    "5. Time Zone": "US/Eastern";
+    "5. Time Zone": string;
   };
   "Time Series (Daily)": {
     [date: string]: {

@@ -20,5 +20,5 @@ node_modules/
 # Yarn Integrity file
 .yarn-integrity
 
-# dist
-# lib
+dist
+lib
