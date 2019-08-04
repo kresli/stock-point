@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "noUnusedLocals": true,
+    "declarationDir": "dist/types",
+    "declaration": true,
+    "target": "es5",
+    "module": "es2015",
+    "noStrictGenericChecks": false,
+    "sourceMap": false,
+    "experimentalDecorators": true,
+    "strict": true,
+    "outDir": "lib/",
+    "resolveJsonModule": true
+  },
+  "files": ["src/index.ts"],
+  "include": ["src/**/*", "__tests__/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
